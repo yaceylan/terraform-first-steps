@@ -1,18 +1,17 @@
-# variables.tf (Korrigierter Inhalt)
 variable "container_name" {
-  description = "Name for the Nginx Docker container."
+  description = "Name des Docker-Containers"
   type        = string
   default     = "my-flex-nginx-container"
 }
 
 variable "external_port" {
-  description = "External port for accessing the Nginx container."
+  description = "Externer Port zur Weiterleitung auf Port 80 im Container"
   type        = number
+  default     = 8080
 }
 
 variable "nginx_html_content" {
-  description = "Content for the index.html file served by Nginx."
+  description = "HTML-Inhalt der index.html, die im Container gespeichert wird"
   type        = string
-  # Der Default-Wert darf keine Variablen-Interpolation enthalten
-  default     = "<h1>Hello from Terraform Default!</h1><p>This is the initial content.</p>"
+default = "<h1>Hello from Terraform!</h1><p>Willkommen!</p>"
 }

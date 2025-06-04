@@ -4,8 +4,7 @@ resource "docker_image" "nginx" {
 
 resource "docker_container" "simple_nginx" {
   name  = var.container_name
-  image = docker_image.nginx.name
-
+  image = "nginx:latest"
 
   ports {
     internal = 80

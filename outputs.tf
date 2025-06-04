@@ -1,15 +1,14 @@
-# outputs.tf
 output "container_name_output" {
-  description = "The name of the created Docker container."
-  value       = docker_container.simple_nginx.name
+  description = "Name des erstellten Docker-Containers"
+  value       = var.container_name
 }
 
 output "container_external_port" {
-  description = "The external port mapped to the Nginx container."
-  value       = docker_container.simple_nginx.ports[0].external
+  description = "Externer Port des Containers"
+  value       = var.external_port
 }
 
 output "html_content_used" {
-  description = "The HTML content used for the Nginx index page."
+  description = "HTML-Inhalt, der in index.html geschrieben wurde"
   value       = var.nginx_html_content
 }
